@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Yard Waste Week Configuration</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <script>
+    function submit(successful) {
+        if (successful) {
+            var e = document.getElementById("regionInput");
+            var region = e.options[e.selectedIndex].value;
+
+            var configuration = {
+                'region':region
+            };
+
+            window.localStorage.setItem('region', region);
+            location.href = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(configuration));
+        }
+        else {
+            location.href = 'pebblejs://close';
+        }
+    }     
+
+    window.onload = function() {
+        var current_region = window.localStorage.getItem('region') || "waterloo";
+        document.getElementById('regionInput').value = current_region;
+    }
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-58118185-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div class="section" style="margin-top: 15%">
+    <div class="container">
+      <h4 class="section-heading">Yard Waste Week Configuration</h3>
+      <p class="section-description">
+        Select where you live in the Waterloo region.  This is used to determine your appropriate yard
+        waste schedule for the year.
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="two columns">
+        <label for="regionInput">Your Region</label>
+        <select class="u-full-width" id="regionInput">
+          <option value="1">Waterloo</option>
+          <option value="2">Kitchener</option>
+          <option value="3">Cambridge</option>
+        </select>
+      </div>
+    </div>
+    <div style="text-align: center">
+      <button class="button-primary" onclick="submit(true);">Save</button>
+      <button class="button-secondary" onclick="submit(false);">Cancel</button>
+    </div>
+  </div>
+</body>
+</html>

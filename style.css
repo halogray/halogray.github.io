@@ -1,0 +1,81 @@
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.image img {
+    float: left;
+    clear: left;
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+}
+
+.title {
+    margin: 10px 0px 0px 10px;
+    font-weight: bold;
+    font-size: 125%;
+}
+
+.subtitle {
+    margin: 0px 0px 0px 10px;
+    font-style: italic;
+    font-size: 75%;
+}
+
+.content-container {
+    overflow: hidden;
+    display: inline-block;
+    display: block;
+}
+
+.content {
+    margin: 10px;
+    font-size: 90%;
+}
+
+.getit {
+    margin: 10px;
+}
+
+
+.logo {
+    font-weight: 400;
+    font-size: 150%;
+}
+
+.spaced {
+    color: black;
+    padding: 2px 20px 2px 2px;
+    letter-spacing: 5px;
+}
+
+.inverse {
+    color: white;
+    background-color: black;
+    letter-spacing: 0px;
+    padding: 0px 5px 0px 5px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.50), rgba(0,0,0,0.20), rgba(0,0,0,0.00)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0.50), rgba(0,0,0,0.20), rgba(0,0,0,0.00)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0.50), rgba(0,0,0,0.20), rgba(0,0,0,0.00)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0.50), rgba(0,0,0,0.20), rgba(0,0,0,0.00)); 
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    text-align: left;
+    font-size: 75%;
+}
